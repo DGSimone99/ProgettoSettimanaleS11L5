@@ -5,6 +5,7 @@ import SideBar from "./components/Sidebar";
 import Main from "./components/Main";
 import Player from "./components/Player";
 import TopBar from "./components/TopBar";
+import SearchSection from "./components/SearchSection";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <SideBar />
         <div id="main">
           <TopBar />
+          <SearchSection />
           <Main />
         </div>
       </Row>

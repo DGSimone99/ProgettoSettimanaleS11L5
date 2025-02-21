@@ -6,17 +6,17 @@ const Main = () => {
     <Col xs={12} md={9} className="offset-md-3 mainPage pt-5">
       <Row>
         <Col xs={10}>
-          <MusicSection artistName="Katy Perry" />
+          <MusicSection artistName="Katy Perry" number="4" />
         </Col>
       </Row>
       <Row>
         <Col xs={10}>
-          <MusicSection artistName="Queen" />
+          <MusicSection artistName="Queen" number="4" />
         </Col>
       </Row>
       <Row>
         <Col xs={10}>
-          <MusicSection artistName="Eminem" />
+          <MusicSection artistName="Eminem" number="4" />
         </Col>
       </Row>
     </Col>

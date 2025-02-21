@@ -1,5 +1,6 @@
 export const SET_SONGS = "SET_SONGS";
 export const SELECT_SONG = "SELECT_SONG";
+export const SEARCH_SONG = "SEARCH_SONG";
 
 export const getSongsAction = (artistName) => {
   return async (dispatch) => {
@@ -19,3 +20,4 @@ export const getSongsAction = (artistName) => {
 };
 
 export const selectSongAction = (song) => ({ type: SELECT_SONG, payload: song });
+export const searchSongAction = (song) => ({ type: SEARCH_SONG, payload: song });

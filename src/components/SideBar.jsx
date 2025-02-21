@@ -1,8 +1,14 @@
 import { Button, Col, Container, Form, Image, InputGroup, Nav, Navbar, NavLink } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
 import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
+import { useDispatch } from "react-redux";
+import { searchSongAction } from "../redux/actions";
+import { useState } from "react";
 
 const SideBar = () => {
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+
   return (
     <Col className="col col-2">
       <Navbar expand="md" className="fixed-left justify-content-between" id="sidebar">
@@ -29,8 +35,20 @@ const SideBar = () => {
                   <BookFill></BookFill>&nbsp; Your Library
                 </Nav.Link>
                 <InputGroup className="mt-3">
-                  <Form.Control placeholder="Search" aria-label="Search" />
-                  <Button className="btn-outline-secondary bg-transparent btn-sm ">GO</Button>
+                  <Form.Control
+                    placeholder="Search"
+                    aria-label="Search"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                  <Button
+                    className="btn-outline-secondary bg-transparent btn-sm"
+                    onClick={() => {
+                      dispatch(searchSongAction(search));
+                    }}
+                  >
+                    GO
+                  </Button>
                 </InputGroup>
               </ul>
             </Nav>
