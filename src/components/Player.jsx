@@ -8,13 +8,18 @@ import { useSelector } from "react-redux";
 
 const Player = () => {
   const selectedSong = useSelector((state) => state.selectedSong.content);
+  const durationPlayer = (duration) => {
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    return minutes + ":" + seconds.toString().padStart(2, "0");
+  };
 
   return (
     <Container fluid className="position-fixed bg-container pt-1">
       <Row className="h-100">
         <Col lg={10}>
           <Row className="h-100 align-items-center">
-            <Col xs={2} className="d-flex dataSong">
+            <Col xs={2} className="d-flex dataSong align-items-center">
               {selectedSong?.album?.cover_small && (
                 <Image src={selectedSong.album.cover_small} alt="Cover" width={75} className="rounded-2"></Image>
               )}
@@ -23,8 +28,8 @@ const Player = () => {
                 <h3 className="text-white artistName">{selectedSong?.artist?.name}</h3>
               </div>
             </Col>
-            <Col xs={6} md={4} className="playerControls flex-column">
-              <div className="d-flex">
+            <Col xs={6} md={4} className="playerControls">
+              <div className="d-flex justify-content-between">
                 <Nav.Link href="#">
                   <Image src={Shuffle} alt="shuffle" />
                 </Nav.Link>
@@ -41,8 +46,16 @@ const Player = () => {
                   <Image src={Repeat} alt="repeat" />
                 </Nav.Link>
               </div>
-              <div className="progress mt-3">
-                <div role="progressbar"></div>
+              <div className="d-flex justify-content-between align-items-center mt-1">
+                <div className="text-white m-0">0:00</div>
+                <div className="progress w-75">
+                  <div role="progressbar"></div>
+                </div>
+                {selectedSong ? (
+                  <div className="text-white  m-0">{durationPlayer(selectedSong?.duration)}</div>
+                ) : (
+                  <div className="text-white  m-0">0:00</div>
+                )}
               </div>
             </Col>
           </Row>

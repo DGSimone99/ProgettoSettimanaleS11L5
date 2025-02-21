@@ -1,6 +1,7 @@
 body {
   background: rgb(46, 63, 87);
   background: linear-gradient(90deg, rgb(63, 86, 119) 0%, rgba(33, 44, 61, 1) 42%, rgb(15, 21, 29) 100%);
+  overflow-x: hidden;
 }
 
 /*SIDEBAR SECTION*/
@@ -93,19 +94,14 @@ ul {
   background-color: #282828;
   bottom: 0;
   right: 0;
-  width: calc(100% - 230px);
+  width: calc(100vw - 240px);
 }
 
 @media screen and (max-width: 936px) {
   .bg-container {
-    width: 100%;
+    width: 100vw;
   }
 }
-
-.playerControls div {
-  justify-content: space-between;
-}
-
 .playerControls div:first-of-type {
   margin-left: 10%;
   margin-right: 10%;
@@ -136,19 +132,26 @@ ul {
 }
 
 .dataSong {
-  width: 45%;
-  max-width: 45%;
+  width: 40%;
+  max-width: 40%;
 }
 
 .songName {
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 .artistName {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: normal;
 }
 
 /*MAIN PAGE SECTION*/
+
+.topBar {
+  width: calc(100vw - 240px);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 .mainLinks {
   margin-top: 1.5rem;

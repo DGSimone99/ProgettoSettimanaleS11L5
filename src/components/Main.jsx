@@ -3,7 +3,7 @@ import MusicSection from "./MusicSection";
 
 const Main = () => {
   return (
-    <Col xs={12} md={9} className="offset-md-3 mainPage">
+    <Col xs={12} md={9} className="offset-md-3 mainPage pt-5">
       <Row>
         <Col xs={10}>
           <MusicSection artistName="Katy Perry" />
