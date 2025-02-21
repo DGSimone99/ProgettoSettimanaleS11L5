@@ -1,7 +1,7 @@
 body {
   background: rgb(46, 63, 87);
   background: linear-gradient(90deg, rgb(63, 86, 119) 0%, rgba(33, 44, 61, 1) 42%, rgb(15, 21, 29) 100%);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /*SIDEBAR SECTION*/
@@ -94,7 +94,7 @@ ul {
   background-color: #282828;
   bottom: 0;
   right: 0;
-  width: calc(100vw - 240px);
+  width: calc(100vw - 230px);
 }
 
 @media screen and (max-width: 936px) {
@@ -148,9 +148,6 @@ ul {
 
 .topBar {
   width: calc(100vw - 240px);
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .mainLinks {
@@ -170,6 +167,7 @@ ul {
   text-decoration: none;
   opacity: 1;
   transition: 0.3s;
+  color: white;
 }
 
 .imgLinks a p,
@@ -180,22 +178,35 @@ ul {
   font-weight: 700;
 }
 
-#rock,
-#pop,
-#hiphop {
-  color: white;
-  font-weight: 700;
-  padding-top: 50px;
-}
-
-#hipHopSection {
-  margin-bottom: 7rem;
-}
-
 .mainPage img {
   width: 200px;
 }
 
 #main {
   height: calc(100vh - 100px);
+  overflow-x: hidden;
+}
+
+#main::-webkit-scrollbar {
+  width: 10px;
+}
+
+#main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#main::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.774);
+  border-radius: 4px;
+}
+
+.song {
+  cursor: pointer;
+  &:hover {
+    transform: scale(110%);
+  }
+  &:active {
+    transform: scale(100%);
+  }
+  transition: transform 0.2s;
 }

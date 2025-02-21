@@ -6,14 +6,14 @@ const SingleSong = (props) => {
   const dispatch = useDispatch();
   return (
     <Col
-      className="text-center"
+      className="text-center song"
       onClick={() => {
         dispatch(selectSongAction(props.song));
       }}
     >
       <Image fluid src={props.song.album.cover_medium} alt="track" />
       <p>
-        Track: {props.song.title}
+        Track: {props.song.title_short}
         <br />
         Artist: {props.song.artist.name}
       </p>

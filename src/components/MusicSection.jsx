@@ -15,7 +15,7 @@ const MusicSection = (props) => {
 
   return (
     <div>
-      <h2>{props.artistName}</h2>
+      <h2 className="text-white">{props.artistName}</h2>
       <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3">
         {songs.slice(0, 4).map((song) => (
           <SingleSong key={song.id} song={song} />
