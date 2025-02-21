@@ -1,9 +1,12 @@
 import { Col, Image } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { selectSongAction } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addToLibraryAction, selectSongAction } from "../redux/actions";
+import { Heart, HeartFill } from "react-bootstrap-icons";
 
 const SingleSong = (props) => {
   const dispatch = useDispatch();
+  const library = useSelector((state) => state.library.content);
+  const inLibrary = library.map((song) => song.id).includes(props.song.id);
   return (
     <Col
       className="text-center song"
@@ -12,11 +15,26 @@ const SingleSong = (props) => {
       }}
     >
       <Image fluid src={props.song.album.cover_medium} alt="track" />
-      <p>
+      <p className="mb-1">
         Track: {props.song.title_short}
         <br />
         Artist: {props.song.artist.name}
       </p>
+      {inLibrary ? (
+        <HeartFill
+          onClick={() => {
+            dispatch(addToLibraryAction(props.song));
+          }}
+          className="text-white"
+        ></HeartFill>
+      ) : (
+        <Heart
+          onClick={() => {
+            dispatch(addToLibraryAction(props.song));
+          }}
+          className="text-white"
+        ></Heart>
+      )}
     </Col>
   );
 };

@@ -1,9 +1,10 @@
-import { Button, Col, Container, Form, Image, InputGroup, Nav, Navbar, NavLink } from "react-bootstrap";
+import { Button, Col, Container, Form, Image, InputGroup, Nav, Navbar } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
 import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 import { searchSongAction } from "../redux/actions";
 import { useState } from "react";
+import { NavLink } from "react-router";
 
 const SideBar = () => {
   const [search, setSearch] = useState("");
@@ -28,12 +29,12 @@ const SideBar = () => {
           <Navbar.Collapse id="navbarNavAltMarkup">
             <Nav className="navbar-nav">
               <ul>
-                <Nav.Link className="nav-item nav-link d-flex align-items-center" href="#">
+                <NavLink to="/" className="nav-item nav-link d-flex align-items-center">
                   <HouseDoorFill></HouseDoorFill>&nbsp;Home
-                </Nav.Link>
-                <Nav.Link className="nav-item nav-link d-flex align-items-center" href="#">
+                </NavLink>
+                <NavLink to="/library" className="nav-item nav-link d-flex align-items-center">
                   <BookFill></BookFill>&nbsp; Your Library
-                </Nav.Link>
+                </NavLink>
                 <InputGroup className="mt-3">
                   <Form.Control
                     placeholder="Search"

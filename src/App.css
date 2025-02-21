@@ -207,10 +207,7 @@ ul {
 .song {
   cursor: pointer;
   &:hover {
-    transform: scale(110%);
-  }
-  &:active {
-    transform: scale(100%);
+    transform: scale(105%);
   }
   transition: transform 0.2s;
 }
