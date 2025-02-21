@@ -199,10 +199,28 @@ ul {
   border-radius: 4px;
 }
 
-.song {
+.titleSong,
+.artistSong,
+.bi-heart,
+.bi-heart-fill {
+  cursor: pointer;
+  &:hover {
+    transform: scale(110%);
+    text-decoration: underline;
+  }
+  transition: transform 0.2s;
+}
+
+.imgSong {
   cursor: pointer;
   &:hover {
     transform: scale(105%);
   }
   transition: transform 0.2s;
+}
+
+.sideBarSong {
+  &:hover {
+    color: white !important;
+  }
 }

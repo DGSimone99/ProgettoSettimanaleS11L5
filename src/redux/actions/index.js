@@ -3,6 +3,7 @@ export const SELECT_SONG = "SELECT_SONG";
 export const SEARCH_SONG = "SEARCH_SONG";
 export const ADD_TO_LIBRARY = "ADD_TO_LIBRARY";
 export const REMOVE_FROM_LIBRARY = "REMOVE_FROM_LIBRARY";
+export const CLEAR_LIBRARY = "CLEAR_LIBRARY";
 
 export const getSongsAction = (artistName) => {
   return async (dispatch) => {
@@ -37,3 +38,5 @@ export const removeFromLibraryAction = (songId) => ({ type: REMOVE_FROM_LIBRARY,
 
 export const selectSongAction = (song) => ({ type: SELECT_SONG, payload: song });
 export const searchSongAction = (song) => ({ type: SEARCH_SONG, payload: song });
+
+export const clearLibraryAction = () => ({ type: CLEAR_LIBRARY });

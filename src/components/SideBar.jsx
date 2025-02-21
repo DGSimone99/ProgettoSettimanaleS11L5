@@ -1,18 +1,19 @@
 import { Button, Col, Container, Form, Image, InputGroup, Nav, Navbar } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
 import { BookFill, HouseDoorFill } from "react-bootstrap-icons";
-import { useDispatch } from "react-redux";
-import { searchSongAction } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { searchSongAction, selectSongAction } from "../redux/actions";
 import { useState } from "react";
 import { NavLink } from "react-router";
 
 const SideBar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
+  const library = useSelector((state) => state.library.content || []);
 
   return (
     <Col xs={2} className="ps-0 me-md-5 me-xl-4">
-      <Navbar expand="md" className="justify-content-between" variant="dark" id="sidebar">
+      <Navbar expand="md" variant="dark" id="sidebar">
         <Container className="flex-column align-items-start">
           <Navbar.Brand href="index.html">
             <Image src={Logo} alt="Spotify Logo" width="131" height="40" />
@@ -61,8 +62,23 @@ const SideBar = () => {
               </ul>
             </Nav>
           </Navbar.Collapse>
+          <hr className="w-75 text-white mx-auto"></hr>
         </Container>
-        <div className="nav-btn d-flex flex-column mx-auto">
+
+        <Container className="d-flex flex-column justify-content-start align-items-start">
+          {library.slice(0, 6).map((song) => (
+            <NavLink
+              className="text-secondary nav-link my-2 sideBarSong"
+              key={song.id}
+              onClick={() => {
+                dispatch(selectSongAction(song));
+              }}
+            >
+              {song.title_short}
+            </NavLink>
+          ))}
+        </Container>
+        <div className="nav-btn d-flex flex-column mx-auto mt-auto">
           <Button className="signup-btn" type="button">
             Sign Up
           </Button>

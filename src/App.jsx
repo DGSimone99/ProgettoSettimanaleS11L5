@@ -8,6 +8,7 @@ import TopBar from "./components/TopBar";
 import SearchSection from "./components/SearchSection";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Library from "./components/Library";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Main />}></Route>
               <Route path="/library" element={<Library />}></Route>
+              <Route path="*" element={<PageNotFound />}></Route>
             </Routes>
           </Col>
         </Row>

@@ -1,7 +1,7 @@
 import { Button, Col } from "react-bootstrap";
 import { Link } from "react-router";
 
-const Library = () => {
+const PageNotFound = () => {
   return (
     <Col className="mainPage pt-5 h-100">
       <div className="d-flex my-auto align-items-center text-center justify-content-center flex-column h-50">
@@ -14,4 +14,4 @@ const Library = () => {
   );
 };
 
-export default Library;
+export default PageNotFound;
