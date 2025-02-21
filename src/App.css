@@ -5,12 +5,9 @@ body {
 }
 
 /*SIDEBAR SECTION*/
-.navbar.fixed-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+#sidebar {
+  height: 100vh;
+  padding-left: 0;
   width: 230px;
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -147,8 +144,6 @@ ul {
 /*MAIN PAGE SECTION*/
 
 .mainLinks {
-  width: calc(100vw - 240px);
-  margin-left: 150px;
   margin-top: 1.5rem;
   justify-content: space-evenly;
 }

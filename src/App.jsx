@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import SideBar from "./components/Sidebar";
 import Main from "./components/Main";
 import Player from "./components/Player";
@@ -15,14 +15,14 @@ function App() {
       <Container fluid>
         <Row>
           <SideBar />
-          <div id="main">
+          <Col id="main" className="pe-5 ps-0">
             <TopBar />
             <SearchSection />
             <Routes>
               <Route path="/" element={<Main />}></Route>
               <Route path="/library" element={<Library />}></Route>
             </Routes>
-          </div>
+          </Col>
         </Row>
         <Player />
       </Container>

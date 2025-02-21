@@ -11,8 +11,8 @@ const SideBar = () => {
   const dispatch = useDispatch();
 
   return (
-    <Col className="col col-2">
-      <Navbar expand="md" className="fixed-left justify-content-between" id="sidebar">
+    <Col xs={2} className="ps-0 me-md-5 me-xl-4">
+      <Navbar expand="md" className="justify-content-between" variant="dark" id="sidebar">
         <Container className="flex-column align-items-start">
           <Navbar.Brand href="index.html">
             <Image src={Logo} alt="Spotify Logo" width="131" height="40" />
@@ -29,7 +29,14 @@ const SideBar = () => {
           <Navbar.Collapse id="navbarNavAltMarkup">
             <Nav className="navbar-nav">
               <ul>
-                <NavLink to="/" className="nav-item nav-link d-flex align-items-center">
+                <NavLink
+                  to="/"
+                  className="nav-item nav-link d-flex align-items-center"
+                  onClick={() => {
+                    dispatch(searchSongAction(""));
+                    setSearch("");
+                  }}
+                >
                   <HouseDoorFill></HouseDoorFill>&nbsp;Home
                 </NavLink>
                 <NavLink to="/library" className="nav-item nav-link d-flex align-items-center">

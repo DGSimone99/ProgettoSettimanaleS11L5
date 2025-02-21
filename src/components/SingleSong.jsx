@@ -9,7 +9,7 @@ const SingleSong = (props) => {
   const inLibrary = library.map((song) => song.id).includes(props.song.id);
   return (
     <Col
-      className="text-center song"
+      className="text-center song mb-5"
       onClick={() => {
         dispatch(selectSongAction(props.song));
       }}
@@ -25,14 +25,14 @@ const SingleSong = (props) => {
           onClick={() => {
             dispatch(addToLibraryAction(props.song));
           }}
-          className="text-white"
+          className="text-white fs-5 mt-2"
         ></HeartFill>
       ) : (
         <Heart
           onClick={() => {
             dispatch(addToLibraryAction(props.song));
           }}
-          className="text-white"
+          className="text-white fs-5 mt-2"
         ></Heart>
       )}
     </Col>
